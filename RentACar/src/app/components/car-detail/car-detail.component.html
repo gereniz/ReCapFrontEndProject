@@ -1,0 +1,25 @@
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Günlük Ücret</th>
+            <th>Model Yılı</th>
+            <th>Açıklama</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let car of car">
+            <td>{{car.brandname}}</td>
+            <td>{{car.colorname}}</td>
+            <td>{{car.dailyprice}}</td>
+            <td>{{car.modelyear}}</td>
+            <td>{{car.description}}</td>
+            <dt><button routerLink="/cars/{{car.id}}" class="btn btn-dark">Kirala</button></dt>
+        </tr>
+    </tbody>
+</table>
+
+

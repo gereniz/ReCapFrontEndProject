@@ -1,0 +1,16 @@
+<div class="btn-group" style="margin-right: 15px;" >
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+    Brand
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" >
+      <li  routerLink="/cars">CARS</li>
+      <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.id}}" *ngFor="let brand of brands">
+      {{brand.brandname}}</li>
+    </ul>
+  </div>
+
+
+  
+
+  
+

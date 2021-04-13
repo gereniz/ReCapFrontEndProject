@@ -1,0 +1,17 @@
+
+  <div class="btn-group">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+      Color
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark" >
+      <li routerLink="/cars">Colors</li>
+    <li (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.id}}" *ngFor="let color of colors">{{color.colorname}}
+    </li>
+    </ul>
+  </div>
+
+
+  
+
+  
+

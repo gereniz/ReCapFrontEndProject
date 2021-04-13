@@ -1,0 +1,37 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-dark" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div class="row g-3">
+<div class="col-auto">
+    <input type="text" [(ngModel)] = "filterText" class="form-control" id="filterText" placeholder="araba modeli giriniz">
+  </div>
+  <div class="col-auto">
+    <app-brand></app-brand> <app-color></app-color>
+  </div>
+</div>
+  <div *ngIf="filterText.length>1" class="alert alert-dark">
+    {{filterText}} aradınız
+  </div>
+
+<table *ngIf="dataLoaded==true" class="table"> 
+    <thead>
+        <tr>
+            
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Günlük Ücret</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars |filterPipe : filterText">
+            
+            <td>{{car.brandname}}</td>
+            <td>{{car.colorname}}</td>
+            <td>{{car.dailyprice |currency}}</td>
+            <td routerLink="/cars/{{car.id}}" >DETAY</td>
+            <dt><button routerLink="/payment" class="btn btn-dark">Kirala</button></dt>
+        </tr>
+    </tbody>
+</table>
